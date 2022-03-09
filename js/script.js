@@ -14,7 +14,7 @@ console.log('JS OK!')
 
 //1) EMAIL:
 
-/*const emailUtente = prompt("inserisci la tua email");
+const emailUtente = prompt("inserisci la tua email");
 console.log(emailUtente);
 
 let listaEmail = ["pippo@gmail.com", "topolino@gmail.com", "pluto@gmail.com"];
@@ -30,19 +30,37 @@ for (let i = 0; i < listaEmail.length; i++) {
     }
 }
 
-if (!checkEmail) {
+/*if (!checkEmail) {
     console.log("Mi dispiace, non sei registrato");
 }*/
 
 //1) GIOCO DEI DADI:
+
+//lancio Dadi (utente e CPU)
+
 document.querySelector('.btn').addEventListener('click', function () {
     const numeroUtente = Math.floor(Math.random() * 6) + 1;
     console.log("numero utente: " + numeroUtente)
+
+    const numeroCpu = Math.floor(Math.random() * 6) + 1;
+    console.log("numero CPU: " + numeroCpu)
+
+    //verifica condizioni
+
+    if (numeroUtente > numeroCpu) {
+        console.log("Hai Vinto!")
+        document.getElementById('utente').innerText = 'Numero Utente: ' + numeroUtente;
+        document.getElementById('cpu').innerText = 'Numero CPU: ' + numeroCpu;
+        document.getElementById('results').innerText = 'HAI VINTO!';
+    } else if (numeroUtente < numeroCpu) {
+        console.log("Hai Perso")
+        document.getElementById('utente').innerText = 'Numero Utente: ' + numeroUtente;
+        document.getElementById('cpu').innerText = 'Numero CPU: ' + numeroCpu;
+        document.getElementById('results').innerText = 'HAI PERSO!';
+    } else {
+        console.log("Pareggio, Ritira il dado!")
+        document.getElementById('utente').innerText = 'Numero Utente: ' + numeroUtente;
+        document.getElementById('cpu').innerText = 'Numero CPU: ' + numeroCpu;
+        document.getElementById('results').innerText = 'PAREGGIO!';
+    }
 })
-
-
-
-const numeroCpu = Math.floor(Math.random() * 6) + 1;
-
-console.log("numero utente: " + numeroCpu)
-

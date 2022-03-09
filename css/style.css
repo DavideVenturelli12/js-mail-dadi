@@ -6,19 +6,54 @@
 
 body{
     font-family: sans-serif;
+    margin: 0 20px;
+    text-align: center;
 }
 
+/*content*/
+
 h1{
-    text-align: center;
-    animation-name: zoom;
-    animation-duration: 4s;
+    margin: 20px 0;
+    color: red;
+    animation: zoom 3s linear infinite;
 }
 
 @keyframes zoom {
-    from {
+    0% {
         transform: scale(1);
     }
-    to {
-        transform: scale(0.5);}
+    50% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale(1);
+    }      
   }
 
+button{
+    padding: 6px 12px;
+    background-color: lightskyblue;
+    border: 2px solid blue;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+button:active{
+    transform: scale(0.9);
+}
+
+h3{
+    margin: 10px 0;
+    color: green;
+}
+
+ul li{
+    list-style: none;
+    font-style: italic;
+    line-height: 30px;
+}
+
+#results{
+    font-weight: 700;
+}
